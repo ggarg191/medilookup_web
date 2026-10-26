@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MediLookup — Know what's at home before you buy</title>
+<meta name="description" content="MediLookup tracks every medicine in your house so you check before you buy, order what's missing from nearby medical stores, and remind your family on time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0}
+a{color:#047857}a:hover{color:#065F46}
+.ms *{box-sizing:border-box}
+@keyframes ms-scan{0%{top:10%}50%{top:86%}100%{top:10%}}
+@keyframes ms-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes ms-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes ms-rowin{0%,12%{opacity:0;transform:translateY(-14px)}22%,84%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+@keyframes ms-type{0%,8%{width:0}40%,82%{width:96px}100%{width:0}}
+@keyframes ms-blink{50%{opacity:0}}
+@keyframes ms-seq{0%,10%{opacity:0;transform:translateX(-10px)}22%,86%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes ms-draw{0%,8%{stroke-dashoffset:120}40%,100%{stroke-dashoffset:0}}
+@keyframes ms-pop{0%,30%{opacity:0;transform:translateY(10px) scale(.96)}45%,90%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes ms-notif{0%,6%{transform:translateY(-130%);opacity:0}14%,70%{transform:none;opacity:1}80%,100%{transform:translateY(-130%);opacity:0}}
+@keyframes ms-ring{0%,46%,100%{transform:rotate(0)}10%{transform:rotate(16deg)}20%{transform:rotate(-14deg)}30%{transform:rotate(9deg)}38%{transform:rotate(-5deg)}}
+@keyframes ms-travel{0%{left:14%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:80%;opacity:0}}
+@keyframes ms-pulse{0%{box-shadow:0 0 0 0 rgba(4,120,87,.45)}100%{box-shadow:0 0 0 16px rgba(4,120,87,0)}}
+@keyframes ms-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes ms-spin{to{transform:rotate(360deg)}}
+.ms-scan{animation:ms-scan 2.8s ease-in-out infinite}
+.ms-float{animation:ms-float 5s ease-in-out infinite}
+.ms-float2{animation:ms-float 6s ease-in-out -2s infinite}
+.ms-float3{animation:ms-float 5.5s ease-in-out -4s infinite}
+.ms-marquee{animation:ms-marquee 32s linear infinite}
+.ms-rowin{animation:ms-rowin 6s ease-out infinite}
+.ms-type{animation:ms-type 6s steps(8) infinite}
+.ms-caret{animation:ms-blink 1s step-end infinite}
+.ms-seq1{animation:ms-seq 6s ease-out infinite}
+.ms-seq2{animation:ms-seq 6s ease-out .5s infinite}
+.ms-seq3{animation:ms-seq 6s ease-out 1s infinite}
+.ms-draw{stroke-dasharray:120;animation:ms-draw 6s ease-out infinite}
+.ms-pop1{animation:ms-pop 6s ease-out infinite}
+.ms-pop2{animation:ms-pop 6s ease-out .3s infinite}
+.ms-pop3{animation:ms-pop 6s ease-out .6s infinite}
+.ms-notif{animation:ms-notif 7s cubic-bezier(.2,.8,.2,1) infinite}
+.ms-ring{transform-origin:50% 10%;animation:ms-ring 3.5s ease-in-out infinite}
+.ms-travel{animation:ms-travel 4s ease-in-out infinite}
+.ms-pulse{animation:ms-pulse 1.8s ease-out infinite}
+.ms-up1{animation:ms-up .8s ease-out both}
+.ms-up2{animation:ms-up .8s ease-out .12s both}
+.ms-up3{animation:ms-up .8s ease-out .24s both}
+.ms-up4{animation:ms-up .8s ease-out .36s both}
+.ms-spin{animation:ms-spin 18s linear infinite}
+.ms.still *{animation:none !important}
+@media (prefers-reduced-motion: reduce){.ms *{animation:none !important}}
+</style>
+</head>
+<body>
+<div class="ms" style="background: #F4F7F5; color: #0E1C17; font-family: 'Manrope', system-ui, sans-serif; overflow: hidden">
+
+<header style="max-width: 1200px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="#top" style="font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #0E1C17; text-decoration: none">Medi<span style="color: #047857">Lookup</span></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
+<a href="#features" style="font-size: 15px; font-weight: 600; color: #34453E; text-decoration: none">Features</a>
+<a href="#family" style="font-size: 15px; font-weight: 600; color: #34453E; text-decoration: none">For families</a>
+<a href="#how" style="font-size: 15px; font-weight: 600; color: #34453E; text-decoration: none">How it works</a>
+<a href="#download" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #0E1C17; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center">Get the app</a>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<span class="ms-up1" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px 8px 10px; border-radius: 999px; background: #E6F4EE; color: #065F46; font-size: 14px; font-weight: 700"><span class="ms-pulse" style="width: 10px; height: 10px; border-radius: 5px; background: #047857"></span>Check before you buy</span>
+<h1 class="ms-up2" style="margin: 0; font-size: clamp(42px, 5.6vw, 72px); line-height: 1.02; font-weight: 800; letter-spacing: -0.035em">Know what's at home<br><span style="color: #047857">before you buy.</span></h1>
+<p class="ms-up3" style="margin: 0; max-width: 540px; font-size: 19px; line-height: 1.55; color: #34453E">How often have you bought a strip, only to find the same one in the drawer at home? MediLookup keeps track of every medicine in your house, so you check first, and when something really is missing, order it from the nearest medical store.</p>
+<div class="ms-up4" style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#download" style="height: 56px; padding: 0 24px; border-radius: 16px; background: #047857; color: #FFFFFF; font-size: 16px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download for Android</a>
+<a href="#download" style="height: 56px; padding: 0 22px; border-radius: 16px; border: 1.5px solid #C9D6CF; background: #FFFFFF; color: #0E1C17; font-size: 16px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center">iPhone — coming soon</a>
+</div>
+<ul class="ms-up4" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 14px; font-weight: 600; color: #34453E">
+<li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Check stock before buying</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Order from nearby stores</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Family reminders</li>
+</ul>
+</div>
+
+<div style="flex: 1 1 440px; min-width: 0; position: relative; height: 620px">
+<div class="ms-spin" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%; border: 1.5px dashed #BFD8CC"></div>
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 380px; height: 380px; margin: -190px 0 0 -190px; border-radius: 50%; background: #E1F1E9"></div>
+
+<div role="img" aria-label="MediLookup app scanning a medicine strip and adding it to home stock" style="position: absolute; left: 50%; top: 10px; width: 300px; height: 600px; margin-left: -150px; border-radius: 46px; background: #0E1C17; padding: 12px; box-shadow: 0 30px 60px rgba(11,59,46,0.25)">
+<div style="width: 100%; height: 100%; border-radius: 36px; background: #F4F7F5; overflow: hidden; padding: 24px 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 16px; font-weight: 800">Scan medicine</span>
+<span style="font-size: 11px; font-weight: 700; color: #065F46; background: #E6F4EE; padding: 4px 8px; border-radius: 999px">Auto</span>
+</div>
+<div style="position: relative; height: 230px; border-radius: 22px; background: #0B3B2E; overflow: hidden; display: flex; align-items: center; justify-content: center">
+<div style="width: 180px; height: 92px; border-radius: 12px; background: #DCE8E2; padding: 12px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; transform: rotate(-6deg)">
+<span style="height: 26px; border-radius: 13px; background: #FFFFFF; border: 2px solid #B9CEC4"></span><span style="height: 26px; border-radius: 13px; background: #FFFFFF; border: 2px solid #B9CEC4"></span><span style="height: 26px; border-radius: 13px; background: #FFFFFF; border: 2px solid #B9CEC4"></span><span style="height: 26px; border-radius: 13px; background: #FFFFFF; border: 2px solid #B9CEC4"></span><span style="height: 26px; border-radius: 13px; background: #FFFFFF; border: 2px solid #B9CEC4"></span>
+<span style="grid-column: span 3; height: 10px; border-radius: 5px; background: #8FAE9F; align-self: center"></span><span style="grid-column: span 2; height: 10px; border-radius: 5px; background: #B9CEC4; align-self: center"></span>
+</div>
+<span style="position: absolute; top: 16px; left: 16px; width: 28px; height: 28px; border-top: 3px solid #6EE7B7; border-left: 3px solid #6EE7B7; border-radius: 8px 0 0 0"></span>
+<span style="position: absolute; top: 16px; right: 16px; width: 28px; height: 28px; border-top: 3px solid #6EE7B7; border-right: 3px solid #6EE7B7; border-radius: 0 8px 0 0"></span>
+<span style="position: absolute; bottom: 16px; left: 16px; width: 28px; height: 28px; border-bottom: 3px solid #6EE7B7; border-left: 3px solid #6EE7B7; border-radius: 0 0 0 8px"></span>
+<span style="position: absolute; bottom: 16px; right: 16px; width: 28px; height: 28px; border-bottom: 3px solid #6EE7B7; border-right: 3px solid #6EE7B7; border-radius: 0 0 8px 0"></span>
+<span class="ms-scan" style="position: absolute; left: 22px; right: 22px; height: 3px; border-radius: 2px; background: #6EE7B7; box-shadow: 0 0 18px 4px rgba(110,231,183,0.55)"></span>
+</div>
+<div class="ms-rowin" style="background: #FFFFFF; border: 1.5px solid #047857; border-radius: 18px; padding: 12px; display: flex; align-items: center; gap: 10px">
+<span style="width: 36px; height: 36px; flex-shrink: 0; border-radius: 12px; background: #047857; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 800">Fluconazole 150mg</span><span style="font-size: 12px; color: #52635C">Added to home stock</span></span>
+</div>
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #52635C">Home stock</span>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 12px; display: flex; justify-content: space-between; font-size: 13px"><span style="font-weight: 700">Paracetamol 650mg</span><span style="color: #52635C">12 left</span></div>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 12px; display: flex; justify-content: space-between; font-size: 13px"><span style="font-weight: 700">Cetirizine 10mg</span><span style="color: #9A4A00; font-weight: 700">2 left</span></div>
+</div>
+</div>
+
+<div class="ms-float" style="position: absolute; top: 70px; left: 0; width: 240px; background: #FFFFFF; border-radius: 20px; padding: 14px; display: flex; gap: 12px; align-items: center; box-shadow: 0 16px 40px rgba(14,28,23,0.12)">
+<span class="ms-ring" style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 14px; background: #FFF3E4; color: #9A4A00; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 800">Mom's 9:00 PM dose</span><span style="font-size: 12px; color: #52635C">1 tablet · Tap to mark taken</span></span>
+</div>
+<div class="ms-float2" style="position: absolute; top: 270px; right: 0; width: 230px; background: #0B3B2E; color: #FFFFFF; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 16px 40px rgba(14,28,23,0.2)">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #A7E8CF">Already at home</span>
+<span style="font-size: 15px; font-weight: 800">Paracetamol 650mg · 12 left</span>
+<span style="font-size: 12px; color: #CFE9DE">No need to buy this one</span>
+</div>
+<div class="ms-float3" style="position: absolute; bottom: 40px; left: 20px; width: 220px; background: #FFFFFF; border-radius: 20px; padding: 14px; display: flex; gap: 12px; align-items: center; box-shadow: 0 16px 40px rgba(14,28,23,0.12)">
+<span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 20px; background: #E6F4EE; color: #047857; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 800">Ordered nearby</span><span style="font-size: 12px; color: #52635C">[Store name] · [X] km away</span></span>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="background: #0B3B2E; color: #E4EFEA; padding: 22px 0; overflow: hidden; white-space: nowrap">
+<div class="ms-marquee" style="display: inline-flex; gap: 48px; font-size: 20px; font-weight: 800; padding-left: 48px">
+<span>Check before you buy</span><span style="color: #6EE7B7">✦</span><span>Scan medicine boxes</span><span style="color: #6EE7B7">✦</span><span>Scan prescriptions</span><span style="color: #6EE7B7">✦</span><span>Same-salt alternatives</span><span style="color: #6EE7B7">✦</span><span>Order from nearby stores</span><span style="color: #6EE7B7">✦</span><span>Family dose schedules</span><span style="color: #6EE7B7">✦</span><span>Share with friends</span><span style="color: #6EE7B7">✦</span>
+<span>Check before you buy</span><span style="color: #6EE7B7">✦</span><span>Scan medicine boxes</span><span style="color: #6EE7B7">✦</span><span>Scan prescriptions</span><span style="color: #6EE7B7">✦</span><span>Same-salt alternatives</span><span style="color: #6EE7B7">✦</span><span>Order from nearby stores</span><span style="color: #6EE7B7">✦</span><span>Family dose schedules</span><span style="color: #6EE7B7">✦</span><span>Share with friends</span><span style="color: #6EE7B7">✦</span>
+</div>
+</div>
+
+<section id="features" style="max-width: 1200px; margin: 0 auto; padding: 112px 24px 40px; display: flex; flex-direction: column; gap: 104px">
+<div style="max-width: 720px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #047857">What MediLookup does</span>
+<h2 style="margin: 0; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; font-weight: 800; letter-spacing: -0.03em">Everything your medicine cabinet should have been doing all along.</h2>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 800; color: #047857">01 · Home stock</span>
+<h3 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Stop buying medicines you already have.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #34453E">Point your camera at a box or strip and MediLookup reads the name for you, or type it in yourself. Before you head to the chemist, open the app and see exactly what's already in the house, and how much is left.</p>
+</div>
+<div role="img" aria-label="A medicine box being scanned and added to the home stock list" style="flex: 1.2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 32px; padding: 28px; display: flex; flex-wrap: wrap; gap: 24px; min-height: 380px">
+<div style="flex: 0 0 190px; display: flex; flex-direction: column; gap: 12px">
+<div style="position: relative; height: 250px; border-radius: 22px; background: #0B3B2E; overflow: hidden; display: flex; align-items: center; justify-content: center">
+<div style="width: 112px; height: 150px; border-radius: 10px; background: #FFF3E4; border: 2px solid #F6D6AE; padding: 14px 12px; display: flex; flex-direction: column; gap: 8px">
+<span style="width: 70%; height: 10px; border-radius: 5px; background: #9A4A00"></span>
+<span style="width: 50%; height: 8px; border-radius: 4px; background: #E0B583"></span>
+<span style="margin-top: auto; width: 100%; height: 34px; border-radius: 6px; background: #FFE2BF"></span>
+</div>
+<span class="ms-scan" style="position: absolute; left: 18px; right: 18px; height: 3px; border-radius: 2px; background: #6EE7B7; box-shadow: 0 0 18px 4px rgba(110,231,183,0.55)"></span>
+</div>
+<div style="display: flex; gap: 6px">
+<span style="flex: 1; text-align: center; padding: 8px 0; border-radius: 12px; background: #0E1C17; color: #FFFFFF; font-size: 13px; font-weight: 700">Scan</span>
+<span style="flex: 1; text-align: center; padding: 8px 0; border-radius: 12px; background: #F4F7F5; color: #34453E; font-size: 13px; font-weight: 700">Type it</span>
+</div>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #52635C">Home stock</span>
+<div class="ms-rowin" style="border: 1.5px solid #047857; background: #F0FAF5; border-radius: 16px; padding: 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 800">Amoxicillin 500mg</span><span style="font-size: 12px; font-weight: 700; color: #047857">Added just now</span></span><span style="font-size: 13px; color: #34453E">10 left</span></div>
+<div style="border: 1px solid #E3EAE6; border-radius: 16px; padding: 14px; display: flex; justify-content: space-between; align-items: center"><span style="font-size: 15px; font-weight: 700">Paracetamol 650mg</span><span style="font-size: 13px; color: #34453E">12 left</span></div>
+<div style="border: 1px solid #E3EAE6; border-radius: 16px; padding: 14px; display: flex; justify-content: space-between; align-items: center"><span style="font-size: 15px; font-weight: 700">Fluconazole 150mg</span><span style="font-size: 13px; color: #34453E">5 left</span></div>
+<div style="border: 1px solid #F6D6AE; background: #FFF8EF; border-radius: 16px; padding: 14px; display: flex; justify-content: space-between; align-items: center"><span style="font-size: 15px; font-weight: 700">Cetirizine 10mg</span><span style="font-size: 13px; font-weight: 800; color: #9A4A00">Low · 2 left</span></div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap-reverse; gap: 56px; align-items: center">
+<div role="img" aria-label="Typing a medicine name in search while a prescription is scanned and its medicines extracted" style="flex: 1.2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 32px; padding: 28px; display: flex; flex-direction: column; gap: 22px; min-height: 380px">
+<div style="height: 56px; border-radius: 28px; border: 1.5px solid #C9D6CF; padding: 0 8px 0 20px; display: flex; align-items: center; gap: 12px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span class="ms-type" style="display: inline-block; overflow: hidden; white-space: nowrap; font-size: 17px; font-weight: 700">Azithromy</span>
+<span class="ms-caret" style="width: 2px; height: 22px; background: #047857; margin-left: -10px"></span>
+<span style="margin-left: auto; height: 40px; padding: 0 16px; border-radius: 20px; background: #047857; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center">Search</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center">
+<div style="position: relative; flex: 0 0 170px; height: 210px; border-radius: 14px; background: #FBFCFB; border: 1px solid #DCE5E0; padding: 18px 16px; overflow: hidden; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 22px; font-weight: 800; color: #047857; font-style: italic">Rx</span>
+<span style="width: 90%; height: 7px; border-radius: 4px; background: #C9D6CF"></span>
+<span style="width: 70%; height: 7px; border-radius: 4px; background: #C9D6CF"></span>
+<span style="width: 82%; height: 7px; border-radius: 4px; background: #C9D6CF"></span>
+<span style="width: 60%; height: 7px; border-radius: 4px; background: #C9D6CF"></span>
+<span style="margin-top: auto; align-self: flex-end; width: 50px; height: 14px; border-bottom: 2px solid #8FAE9F"></span>
+<span class="ms-scan" style="position: absolute; left: 8px; right: 8px; height: 3px; border-radius: 2px; background: #047857; box-shadow: 0 0 14px 3px rgba(4,120,87,0.35)"></span>
+</div>
+<svg width="36" height="20" viewBox="0 0 36 20" fill="none" stroke="#8FAE9F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10h30"></path><path d="m25 3 7 7-7 7"></path></svg>
+<div style="flex: 1 1 180px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 800; color: #047857">3 medicines found</span>
+<div class="ms-seq1" style="border-radius: 14px; background: #F4F7F5; padding: 12px 14px; display: flex; justify-content: space-between; font-size: 14px"><span style="font-weight: 700">Azithromycin 500mg</span><span style="color: #047857; font-weight: 800">In stock</span></div>
+<div class="ms-seq2" style="border-radius: 14px; background: #F4F7F5; padding: 12px 14px; display: flex; justify-content: space-between; font-size: 14px"><span style="font-weight: 700">Pantoprazole 40mg</span><span style="color: #047857; font-weight: 800">In stock</span></div>
+<div class="ms-seq3" style="border-radius: 14px; background: #FFF3E4; padding: 12px 14px; display: flex; justify-content: space-between; font-size: 14px"><span style="font-weight: 700">Montelukast 10mg</span><span style="color: #9A4A00; font-weight: 800">Missing</span></div>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 800; color: #047857">02 · Search &amp; prescriptions</span>
+<h3 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Find a medicine by name, or let the prescription do the typing.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #34453E">Search your stock in a second. Or snap the doctor's prescription: MediLookup pulls out every medicine on it and tells you what you already have at home, so you only buy what's actually missing.</p>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 800; color: #047857">03 · Same-salt alternatives</span>
+<h3 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Brand unavailable? Get the same salt from another brand.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #34453E">When the exact brand isn't at home or at the chemist, MediLookup suggests medicines with the same salt and strength from other brands, so you can ask your doctor or pharmacist about a swap with confidence.</p>
+</div>
+<div role="img" aria-label="An unavailable brand linked to three alternatives with the same salt" style="flex: 1.2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 32px; padding: 28px; display: flex; flex-direction: column; gap: 0; min-height: 380px">
+<div style="align-self: center; width: 100%; max-width: 340px; border-radius: 20px; background: #0B3B2E; color: #FFFFFF; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 700; color: #A7E8CF">Prescribed</span><span style="font-size: 17px; font-weight: 800">[Brand A] 150</span><span style="font-size: 13px; color: #CFE9DE">Fluconazole · 150mg</span></span>
+<span style="font-size: 12px; font-weight: 800; background: #FDE2DF; color: #8A1C12; padding: 6px 10px; border-radius: 999px">Not available</span>
+</div>
+<svg width="100%" height="64" viewBox="0 0 300 64" preserveAspectRatio="none" fill="none" aria-hidden="true">
+<path class="ms-draw" d="M150 0 C150 32 50 32 50 64" stroke="#047857" stroke-width="2.4" vector-effect="non-scaling-stroke"></path>
+<path class="ms-draw" d="M150 0 L150 64" stroke="#047857" stroke-width="2.4" vector-effect="non-scaling-stroke"></path>
+<path class="ms-draw" d="M150 0 C150 32 250 32 250 64" stroke="#047857" stroke-width="2.4" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<div class="ms-pop1" style="border: 1.5px solid #047857; border-radius: 18px; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px; background: #F0FAF5">
+<span style="align-self: flex-start; font-size: 11px; font-weight: 800; color: #FFFFFF; background: #047857; padding: 3px 8px; border-radius: 999px">At home</span>
+<span style="font-size: 15px; font-weight: 800">[Brand B]</span>
+<span style="font-size: 12px; color: #34453E">Same salt · 150mg</span>
+<span style="font-size: 14px; font-weight: 800">₹[PRICE]</span>
+</div>
+<div class="ms-pop2" style="border: 1px solid #E3EAE6; border-radius: 18px; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="align-self: flex-start; font-size: 11px; font-weight: 800; color: #065F46; background: #E6F4EE; padding: 3px 8px; border-radius: 999px">Lower price</span>
+<span style="font-size: 15px; font-weight: 800">[Brand C]</span>
+<span style="font-size: 12px; color: #34453E">Same salt · 150mg</span>
+<span style="font-size: 14px; font-weight: 800">₹[PRICE]</span>
+</div>
+<div class="ms-pop3" style="border: 1px solid #E3EAE6; border-radius: 18px; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="align-self: flex-start; font-size: 11px; font-weight: 800; color: #34453E; background: #F4F7F5; padding: 3px 8px; border-radius: 999px">Order</span>
+<span style="font-size: 15px; font-weight: 800">[Brand D]</span>
+<span style="font-size: 12px; color: #34453E">Same salt · 150mg</span>
+<span style="font-size: 14px; font-weight: 800">₹[PRICE]</span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap-reverse; gap: 56px; align-items: center">
+<div role="img" aria-label="A map of nearby medical stores with one selected to order a missing medicine" style="flex: 1.2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 32px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="position: relative; height: 200px; border-radius: 22px; overflow: hidden; background-color: #E9F2EE; background-image: repeating-linear-gradient(0deg, transparent 0 38px, #D7E6DF 38px 40px), repeating-linear-gradient(90deg, transparent 0 38px, #D7E6DF 38px 40px)">
+<span style="position: absolute; left: 0; right: 0; top: 46%; height: 14px; background: #FFFFFF"></span>
+<span style="position: absolute; top: 0; bottom: 0; left: 58%; width: 14px; background: #FFFFFF"></span>
+<span class="ms-pulse" style="position: absolute; left: calc(50% - 10px); top: calc(50% - 10px); width: 20px; height: 20px; border-radius: 10px; background: #1D4ED8; border: 3px solid #FFFFFF"></span>
+<span class="ms-pop1" style="position: absolute; left: 20%; top: 18%; width: 36px; height: 36px; border-radius: 18px 18px 18px 4px; background: #047857; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(4,120,87,0.3)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 6v12"></path><path d="M6 12h12"></path></svg></span>
+<span class="ms-pop2" style="position: absolute; left: 70%; top: 14%; width: 32px; height: 32px; border-radius: 16px 16px 16px 4px; background: #FFFFFF; color: #047857; border: 2px solid #047857; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 6v12"></path><path d="M6 12h12"></path></svg></span>
+<span class="ms-pop3" style="position: absolute; left: 30%; top: 68%; width: 32px; height: 32px; border-radius: 16px 16px 16px 4px; background: #FFFFFF; color: #047857; border: 2px solid #047857; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 6v12"></path><path d="M6 12h12"></path></svg></span>
+<span style="position: absolute; left: 12px; top: 12px; font-size: 12px; font-weight: 800; background: #FFFFFF; padding: 6px 10px; border-radius: 999px">3 stores near you</span>
+</div>
+<div style="border-radius: 16px; background: #FFF3E4; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px">
+<span style="font-weight: 700">Montelukast 10mg · not at home</span>
+<span style="font-weight: 800; color: #9A4A00">1 strip</span>
+</div>
+<div class="ms-rowin" style="border: 1.5px solid #047857; background: #F0FAF5; border-radius: 18px; padding: 14px; display: flex; align-items: center; gap: 12px">
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 15px; font-weight: 800">[Store name]</span><span style="font-size: 13px; color: #34453E">[X] km · In stock · Open now</span></span>
+<span style="height: 40px; padding: 0 16px; border-radius: 12px; background: #047857; color: #FFFFFF; font-size: 14px; font-weight: 800; display: flex; align-items: center">Order</span>
+</div>
+<div style="border: 1px solid #E3EAE6; border-radius: 18px; padding: 14px; display: flex; align-items: center; gap: 12px">
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 15px; font-weight: 800">[Store name]</span><span style="font-size: 13px; color: #34453E">[X] km · In stock</span></span>
+<span style="height: 40px; padding: 0 16px; border-radius: 12px; border: 1.5px solid #C9D6CF; font-size: 14px; font-weight: 800; display: flex; align-items: center">Order</span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 800; color: #047857">04 · Order nearby</span>
+<h3 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Really missing something? Order it from the store down the road.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #34453E">When a medicine isn't in your home stock, MediLookup shows the nearest medical retailers that have it. Place the order in the app and it's added to your stock once it arrives.</p>
+</div>
+</div>
+</section>
+
+<section id="family" style="padding: 72px 24px">
+<div style="max-width: 1200px; margin: 0 auto; background: #0B3B2E; color: #FFFFFF; border-radius: 40px; padding: clamp(32px, 5vw, 72px); display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 14px; font-weight: 800; color: #6EE7B7">05 · Schedules &amp; reminders</span>
+<h3 style="margin: 0; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.08; font-weight: 800; letter-spacing: -0.025em">One app for the whole family's pills.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CFE9DE">Set a schedule for each family member, from Dad's morning tablet to your child's night-time syrup. MediLookup sends a notification right on time and keeps track of every dose taken or missed.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px; font-weight: 600; color: #E4EFEA">
+<li style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Separate profile for every member</li>
+<li style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>On-time notifications, one tap to mark taken</li>
+<li style="display: flex; gap: 10px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Stock updates automatically after each dose</li>
+</ul>
+</div>
+<div role="img" aria-label="A dose reminder notification sliding in above a family's daily schedule" style="flex: 1 1 420px; min-width: 0; position: relative; background: #123F33; border-radius: 32px; padding: 96px 24px 24px; overflow: hidden; display: flex; flex-direction: column; gap: 12px">
+<div class="ms-notif" style="position: absolute; top: 20px; left: 20px; right: 20px; background: #FFFFFF; color: #0E1C17; border-radius: 20px; padding: 14px; display: flex; gap: 12px; align-items: center; box-shadow: 0 14px 30px rgba(0,0,0,0.25)">
+<span class="ms-ring" style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; background: #047857; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 12px; font-weight: 700; color: #52635C">MediLookup · now</span><span style="font-size: 15px; font-weight: 800">Dad's 2:00 PM dose is due</span></span>
+<span style="font-size: 13px; font-weight: 800; color: #047857; padding: 8px 10px; border-radius: 10px; background: #E6F4EE">Taken</span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.06); border-radius: 18px; padding: 14px">
+<span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; background: #F6D6AE; color: #4A2400; font-weight: 800; display: flex; align-items: center; justify-content: center">M</span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 800">Mom</span><span style="font-size: 13px; color: #CFE9DE">8:00 AM · 1 tablet</span></span>
+<span style="font-size: 12px; font-weight: 800; color: #0B3B2E; background: #6EE7B7; padding: 6px 10px; border-radius: 999px">Taken</span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.12); border: 1.5px solid #6EE7B7; border-radius: 18px; padding: 14px">
+<span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; background: #BFDBFE; color: #1E3A8A; font-weight: 800; display: flex; align-items: center; justify-content: center">D</span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 800">Dad</span><span style="font-size: 13px; color: #CFE9DE">2:00 PM · 2 tablets</span></span>
+<span class="ms-pulse" style="font-size: 12px; font-weight: 800; color: #FFFFFF; background: #047857; padding: 6px 10px; border-radius: 999px">Due now</span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.06); border-radius: 18px; padding: 14px">
+<span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 22px; background: #DDD6FE; color: #3B0764; font-weight: 800; display: flex; align-items: center; justify-content: center">A</span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 800">Aarav</span><span style="font-size: 13px; color: #CFE9DE">9:00 PM · Syrup 5 ml</span></span>
+<span style="font-size: 12px; font-weight: 800; color: #E4EFEA; border: 1px solid rgba(255,255,255,0.35); padding: 5px 10px; border-radius: 999px">Later</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; display: flex; flex-wrap: wrap-reverse; gap: 56px; align-items: center">
+<div role="img" aria-label="A medicine strip moving from your home to a friend's home" style="flex: 1.2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 32px; padding: 32px 28px; display: flex; flex-direction: column; gap: 24px">
+<div style="position: relative; display: flex; justify-content: space-between; align-items: center; height: 150px">
+<div style="width: 130px; display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1">
+<span style="width: 76px; height: 76px; border-radius: 24px; background: #E6F4EE; color: #047857; display: flex; align-items: center; justify-content: center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1Z"></path></svg></span>
+<span style="font-size: 14px; font-weight: 800">Your home</span>
+</div>
+<span style="position: absolute; left: 110px; right: 110px; top: 38px; border-top: 2.5px dashed #BFD8CC"></span>
+<span class="ms-travel" style="position: absolute; top: 24px; width: 56px; height: 28px; border-radius: 14px; overflow: hidden; display: flex; box-shadow: 0 6px 14px rgba(4,120,87,0.3)"><span style="flex: 1; background: #047857"></span><span style="flex: 1; background: #FFFFFF; border: 2px solid #047857; border-left: none; border-radius: 0 14px 14px 0"></span></span>
+<div style="width: 130px; display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1">
+<span style="width: 76px; height: 76px; border-radius: 24px; background: #FFF3E4; color: #9A4A00; display: flex; align-items: center; justify-content: center"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>
+<span style="font-size: 14px; font-weight: 800">Neha</span>
+</div>
+</div>
+<div style="border-radius: 18px; background: #F4F7F5; padding: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 800">Cetirizine 10mg · 1 strip</span><span style="font-size: 13px; color: #34453E">Shared with Neha · removed from your stock</span></span>
+<span style="font-size: 12px; font-weight: 800; color: #065F46; background: #E6F4EE; padding: 6px 10px; border-radius: 999px">Shared</span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 800; color: #047857">06 · Share with friends</span>
+<h3 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; font-weight: 800; letter-spacing: -0.02em">Have a spare strip? A friend might need it tonight.</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #34453E">Share medicines from your stock with friends in a couple of taps. Your inventory updates automatically, and you can always see what you shared and with whom.</p>
+</div>
+</section>
+
+<section id="how" style="max-width: 1200px; margin: 0 auto; padding: 104px 24px 40px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px">
+<span style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #047857">How it works</span>
+<h2 style="margin: 0; font-size: clamp(32px, 3.8vw, 48px); line-height: 1.1; font-weight: 800; letter-spacing: -0.03em">Set up in minutes. Stay on track for years.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #0E1C17; color: #FFFFFF; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center">1</span>
+<h4 style="margin: 0; font-size: 21px; font-weight: 800">Scan what you have</h4>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #34453E">Go through the medicine drawer once. Scan each box or strip, or type the name.</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #0E1C17; color: #FFFFFF; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center">2</span>
+<h4 style="margin: 0; font-size: 21px; font-weight: 800">Add your family</h4>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #34453E">Create a profile for each member and set their doses: what, how much, and when.</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E3EAE6; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 48px; height: 48px; border-radius: 16px; background: #047857; color: #FFFFFF; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center">3</span>
+<h4 style="margin: 0; font-size: 21px; font-weight: 800">Check, then order</h4>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #34453E">Look up your stock before buying, and order what's missing from a medical store near you. Reminders keep every dose on time.</p>
+</div>
+</div>
+</section>
+
+<section id="download" style="padding: 96px 24px">
+<div style="position: relative; max-width: 1200px; margin: 0 auto; background: #047857; color: #FFFFFF; border-radius: 40px; padding: clamp(40px, 6vw, 88px); overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<span class="ms-float" aria-hidden="true" style="position: absolute; top: 40px; left: 6%; width: 80px; height: 36px; border-radius: 18px; background: rgba(255,255,255,0.16); transform: rotate(-20deg)"></span>
+<span class="ms-float2" aria-hidden="true" style="position: absolute; bottom: 50px; right: 8%; width: 96px; height: 42px; border-radius: 21px; background: rgba(255,255,255,0.12)"></span>
+<span class="ms-float3" aria-hidden="true" style="position: absolute; top: 60px; right: 18%; width: 30px; height: 30px; border-radius: 15px; background: rgba(255,255,255,0.18)"></span>
+<h2 style="margin: 0; max-width: 760px; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.05; font-weight: 800; letter-spacing: -0.03em">Your medicine cabinet, finally organised.</h2>
+<p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.55; color: #E1F5EC">Download MediLookup and add your first medicine in under a minute.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center">
+<a href="[PLAY STORE LINK]" style="height: 56px; padding: 0 26px; border-radius: 16px; background: #FFFFFF; color: #0B3B2E; font-size: 16px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download for Android</a>
+<a href="#download" style="height: 56px; padding: 0 24px; border-radius: 16px; border: 1.5px solid rgba(255,255,255,0.6); color: #FFFFFF; font-size: 16px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center">Notify me for iPhone</a>
+</div>
+</div>
+</section>
+
+<footer style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 48px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; border-top: 1px solid #DCE5E0">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em">Medi<span style="color: #047857">Lookup</span></span>
+<span style="font-size: 14px; color: #52635C">© 2026 [COMPANY NAME] · Bangalore, India</span>
+</div>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; font-weight: 600">
+<a href="#features" style="color: #34453E; text-decoration: none">Features</a>
+<a href="[PRIVACY LINK]" style="color: #34453E; text-decoration: none">Privacy</a>
+<a href="[TERMS LINK]" style="color: #34453E; text-decoration: none">Terms</a>
+<a href="mailto:[CONTACT EMAIL]" style="color: #34453E; text-decoration: none">Contact</a>
+</nav>
+<p style="margin: 0; width: 100%; font-size: 12px; line-height: 1.5; color: #52635C">MediLookup helps you organise medicines. It is not a substitute for medical advice: always check with your doctor or pharmacist before switching brands or changing a dose.</p>
+</footer>
+
+</div>
+</body>
+</html>
